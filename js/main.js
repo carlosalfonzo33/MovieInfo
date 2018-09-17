@@ -11,6 +11,7 @@ function getMovies(searchText){
   // Make a request for a user with a given ID
   axios.get("https://api.themoviedb.org/3/search/movie?api_key=be214887dae72f7a6b48213ed49329d1&language=en-US&query=" + searchText)
     .then(function (response) {
+      console.log(response);
       let movies = response.data.results;
       let output = '';
       $.each(movies, (index, movie) => {
@@ -40,7 +41,7 @@ function movieSelected(id){
 function getMovie(){
   let movieId = sessionStorage.getItem('movieId');
   // Make a request for a user with a given ID
-  axios.get("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=98325a9d3ed3ec225e41ccc4d360c817")
+  axios.get("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=be214887dae72f7a6b48213ed49329d1")
     .then(function (response) {
     let movie = response.data;
     //console.log(movie);
