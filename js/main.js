@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $("#searchForm").on('submit', (e) => {
+  $("button#search1").on('click', (e) => {
     e.preventDefault();
     let searchText = $("#searchText").val();
     getMovies(searchText);
